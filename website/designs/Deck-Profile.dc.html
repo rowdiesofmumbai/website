@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Deck HUD — Profile</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Michroma&amp;family=JetBrains+Mono:wght@400;600;800&amp;display=swap">
+<style>
+body{margin:0;background:#080c0e}
+a{color:#21d4d8}a:hover{color:#ff8a24}
+</style>
+</helmet>
+<div style="background: #080c0e; color: #d9e6e8; font-family: 'JetBrains Mono', monospace; min-height: 100vh">
+
+<header style="border-bottom: 1px solid #1c2e33; background: #0c1316">
+<div style="max-width: 1240px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between">
+<a href="Deck-Profile.dc.html" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #d9e6e8"><span style="width: 12px; height: 12px; border-radius: 50%; background: #ff8a24; box-shadow: 0 0 10px #ff8a24"></span><span style="font-family: Michroma, sans-serif; font-size: 16px; letter-spacing: 3px">ROWDIES_OF_MUMBAI</span></a>
+<nav style="display: flex; flex-wrap: wrap; gap: 6px; font-size: 13px; font-weight: 600">
+<a href="Deck-Profile.dc.html" style="color: #04181a; background: #21d4d8; text-decoration: none; padding: 9px 14px">01 PROFILE</a>
+<a href="Deck-Videos.dc.html" style="color: #9fb4b8; text-decoration: none; padding: 9px 14px; border: 1px solid #23393f">02 VIDEOS</a>
+<a href="#gigs" style="color: #9fb4b8; text-decoration: none; padding: 9px 14px; border: 1px solid #23393f">03 GIGS</a>
+<a href="#book" style="color: #9fb4b8; text-decoration: none; padding: 9px 14px; border: 1px solid #23393f">04 BOOK</a>
+</nav>
+</div>
+</header>
+
+<section style="max-width: 1240px; margin: 0 auto; padding: 28px 24px 0">
+<div style="background: #0c1316; border: 1px solid #1c2e33; padding: 14px 18px; display: flex; align-items: flex-end; gap: 3px; height: 90px; overflow: hidden">
+<sc-for list="{{wave}}" as="w" hint-placeholder-count="120"><div style="flex: 1 1 0; min-width: 2px; height: {{w.h}}; background: {{w.c}}"></div></sc-for>
+</div>
+</section>
+
+<section style="max-width: 1240px; margin: 0 auto; padding: 20px 24px; display: flex; flex-wrap: wrap; gap: 20px">
+<div style="flex: 1 1 520px; min-width: 0; background: #0c1316; border: 1px solid #1c2e33; padding: 28px; display: flex; flex-wrap: wrap; gap: 28px; align-items: center">
+<div style="position: relative; width: 300px; height: 300px; border-radius: 50%; border: 6px solid #21d4d8; box-shadow: 0 0 40px rgba(33,212,216,0.35); overflow: hidden; flex: none">
+<img src="../assets/images/crew.jpg" alt="Rowdies crew art on the jog wheel" style="width: 100%; height: 100%; object-fit: cover; object-position: center 35%">
+</div>
+<div style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+<div style="font-size: 12px; color: #21d4d8; letter-spacing: 3px">DECK A · NOW LOADED</div>
+<h1 style="margin: 0; font-family: Michroma, sans-serif; font-weight: 400; font-size: 44px; line-height: 1.1">ROWDIES<br>OF MUMBAI</h1>
+<p style="margin: 0; color: #9fb4b8; line-height: 1.6; font-size: 15px">[Short intro — the crew, the sound, the city.]</p>
+<div style="display: flex; gap: 10px; flex-wrap: wrap; font-size: 12px">
+<span style="border: 1px solid #23393f; padding: 6px 10px">GENRE <b style="color: #ff8a24">[—]</b></span>
+<span style="border: 1px solid #23393f; padding: 6px 10px">BPM <b style="color: #ff8a24">[—]</b></span>
+<span style="border: 1px solid #23393f; padding: 6px 10px">BASE <b style="color: #ff8a24">MUMBAI</b></span>
+</div>
+</div>
+</div>
+<div style="flex: 1 1 340px; min-width: 0; background: #0c1316; border: 1px solid #1c2e33; padding: 28px; display: flex; flex-direction: column; gap: 18px">
+<div style="font-size: 12px; color: #ff8a24; letter-spacing: 3px">DECK B · CUE NEXT</div>
+<div style="font-family: Michroma, sans-serif; font-size: 26px">[NEXT GIG]</div>
+<div style="color: #9fb4b8">[VENUE], Mumbai · [DATE]</div>
+<div style="height: 6px; background: #1c2e33"><div style="width: 62%; height: 100%; background: #ff8a24"></div></div>
+<a href="Deck-Videos.dc.html" style="margin-top: auto; display: flex; align-items: center; justify-content: center; gap: 10px; background: #ff8a24; color: #1a0b00; text-decoration: none; font-weight: 800; padding: 16px; letter-spacing: 2px"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4v16l13-8z"></path></svg>PLAY SETS</a>
+<a href="#book" style="display: flex; justify-content: center; color: #21d4d8; text-decoration: none; font-weight: 800; padding: 15px; border: 1px solid #21d4d8; letter-spacing: 2px">CUE BOOKING</a>
+</div>
+</section>
+
+<section style="max-width: 1240px; margin: 0 auto; padding: 20px 24px">
+<div style="font-size: 12px; color: #21d4d8; letter-spacing: 3px; margin-bottom: 12px">// CREW · 4 CHANNELS</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px">
+<div style="background: #0c1316; border: 1px solid #1c2e33"><img src="../assets/images/deck.jpg" alt="Crew member" style="display: block; width: 100%; height: 240px; object-fit: cover"><div style="padding: 14px; display: flex; justify-content: space-between; align-items: center"><div><div style="font-family: Michroma, sans-serif; font-size: 16px">[DJ NAME]</div><div style="color: #9fb4b8; font-size: 12px">CH 1 · [ROLE]</div></div><div style="width: 8px; height: 36px; background: linear-gradient(0deg,#21d4d8 70%,#ff8a24 70%)"></div></div></div>
+<div style="background: #0c1316; border: 1px solid #1c2e33"><img src="../assets/images/plaid.jpg" alt="Crew member" style="display: block; width: 100%; height: 240px; object-fit: cover"><div style="padding: 14px; display: flex; justify-content: space-between; align-items: center"><div><div style="font-family: Michroma, sans-serif; font-size: 16px">[DJ NAME]</div><div style="color: #9fb4b8; font-size: 12px">CH 2 · [ROLE]</div></div><div style="width: 8px; height: 36px; background: linear-gradient(0deg,#21d4d8 55%,#ff8a24 55%)"></div></div></div>
+<div style="background: #0c1316; border: 1px solid #1c2e33"><img src="../assets/images/neon.jpg" alt="Crew member" style="display: block; width: 100%; height: 240px; object-fit: cover"><div style="padding: 14px; display: flex; justify-content: space-between; align-items: center"><div><div style="font-family: Michroma, sans-serif; font-size: 16px">[DJ NAME]</div><div style="color: #9fb4b8; font-size: 12px">CH 3 · [ROLE]</div></div><div style="width: 8px; height: 36px; background: linear-gradient(0deg,#21d4d8 80%,#ff8a24 80%)"></div></div></div>
+<div style="background: #0c1316; border: 1px solid #1c2e33"><img src="../assets/images/blue.jpg" alt="Crew member" style="display: block; width: 100%; height: 240px; object-fit: cover"><div style="padding: 14px; display: flex; justify-content: space-between; align-items: center"><div><div style="font-family: Michroma, sans-serif; font-size: 16px">[DJ NAME]</div><div style="color: #9fb4b8; font-size: 12px">CH 4 · [ROLE]</div></div><div style="width: 8px; height: 36px; background: linear-gradient(0deg,#21d4d8 45%,#ff8a24 45%)"></div></div></div>
+</div>
+</section>
+
+<section id="gigs" style="max-width: 1240px; margin: 0 auto; padding: 20px 24px">
+<div style="background: #0c1316; border: 1px solid #1c2e33">
+<div style="display: flex; gap: 16px; padding: 12px 18px; font-size: 12px; color: #6f878c; border-bottom: 1px solid #1c2e33; letter-spacing: 2px"><span style="min-width: 40px">#</span><span style="min-width: 120px">DATE</span><span style="flex: 1">EVENT / VENUE</span><span>STATUS</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 16px; padding: 16px 18px; border-bottom: 1px solid #1c2e33"><span style="min-width: 40px; color: #21d4d8">01</span><span style="min-width: 120px">[DATE]</span><span style="flex: 1 1 220px">[EVENT] · [VENUE]</span><a href="#book" style="color: #ff8a24; font-weight: 800; text-decoration: none">TICKETS ›</a></div>
+<div style="display: flex; flex-wrap: wrap; gap: 16px; padding: 16px 18px"><span style="min-width: 40px; color: #21d4d8">02</span><span style="min-width: 120px">[DATE]</span><span style="flex: 1 1 220px">[EVENT] · [VENUE]</span><a href="#book" style="color: #ff8a24; font-weight: 800; text-decoration: none">TICKETS ›</a></div>
+</div>
+</section>
+
+<section id="book" style="max-width: 1240px; margin: 0 auto; padding: 20px 24px 64px">
+<div style="background: #0c1316; border: 1px solid #21d4d8; padding: 32px; display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; align-items: center">
+<div><div style="font-family: Michroma, sans-serif; font-size: 28px">&gt; BOOK_THE_CREW</div><div style="color: #9fb4b8; margin-top: 8px">[BOOKING EMAIL]</div></div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px; font-weight: 600; font-size: 14px">
+<a href="https://www.instagram.com/rowdiesofmumbai/" style="color: #d9e6e8; text-decoration: none; border: 1px solid #23393f; padding: 12px 16px">IG / @rowdiesofmumbai</a>
+<a href="https://www.youtube.com/@rowdiesofMumbai" style="color: #d9e6e8; text-decoration: none; border: 1px solid #23393f; padding: 12px 16px">YT / @rowdiesofMumbai</a>
+</div>
+</div>
+</section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1800}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const wave = [];
+    for (let i = 0; i < 120; i++) {
+      const v = Math.abs(Math.sin(i * 0.37) * 0.6 + Math.sin(i * 0.11) * 0.4);
+      wave.push({ h: Math.round(12 + v * 88) + '%', c: i < 74 ? '#21d4d8' : '#2a4247' });
+    }
+    return { wave };
+  }
+}
+</script>
+</body>
+</html>

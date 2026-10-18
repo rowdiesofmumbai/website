@@ -1,0 +1,22 @@
+{"v":3,"createdOnFiles":{"v":1,"at":"2026-10-18T19:00:00Z"},"title":"Rowdies of Mumbai — Website Styles","launch":{"view":"canvas"},"pages":[],
+"boards":{
+"Main.dc.html":{"x":0,"y":300,"w":1280,"h":1800,"title":"01 Mask Mode — Profile","expand":"fill","is_interactive":true},
+"MaskMode-Videos.dc.html":{"x":1360,"y":300,"w":1280,"h":1800,"title":"01 Mask Mode — Videos","expand":"fill"},
+"Galli-Profile.dc.html":{"x":0,"y":2600,"w":1280,"h":1800,"title":"02 Galli Wall — Profile","expand":"fill"},
+"Galli-Videos.dc.html":{"x":1360,"y":2600,"w":1280,"h":1800,"title":"02 Galli Wall — Videos","expand":"fill"},
+"Deck-Profile.dc.html":{"x":0,"y":4900,"w":1280,"h":1800,"title":"03 Deck HUD — Profile","expand":"fill"},
+"Deck-Videos.dc.html":{"x":1360,"y":4900,"w":1280,"h":1800,"title":"03 Deck HUD — Videos","expand":"fill"},
+"Rave-Profile.dc.html":{"x":0,"y":7200,"w":1280,"h":1800,"title":"04 Rave Brutal — Profile","expand":"fill"},
+"Rave-Videos.dc.html":{"x":1360,"y":7200,"w":1280,"h":1800,"title":"04 Rave Brutal — Videos","expand":"fill"},
+"Local-Profile.dc.html":{"x":0,"y":9500,"w":1280,"h":1800,"title":"05 Night Local — Profile","expand":"fill"},
+"Local-Videos.dc.html":{"x":1360,"y":9500,"w":1280,"h":1800,"title":"05 Night Local — Videos","expand":"fill"}
+},
+"order":["Main.dc.html","MaskMode-Videos.dc.html","Galli-Profile.dc.html","Galli-Videos.dc.html","Deck-Profile.dc.html","Deck-Videos.dc.html","Rave-Profile.dc.html","Rave-Videos.dc.html","Local-Profile.dc.html","Local-Videos.dc.html"],
+"notes":{
+"t1":{"x":0,"y":30,"text":"01 · Mask Mode — cinematic neon underground","kind":"title1","maxW":2640},
+"t2":{"x":0,"y":2330,"text":"02 · Galli Wall — Mumbai street poster","kind":"title1","maxW":2640},
+"t3":{"x":0,"y":4630,"text":"03 · Deck HUD — the site is a DJ console","kind":"title1","maxW":2640},
+"t4":{"x":0,"y":6930,"text":"04 · Rave Brutal — giant type, hard grid","kind":"title1","maxW":2640},
+"t5":{"x":0,"y":9230,"text":"05 · Night Local — station signage meets neon","kind":"title1","maxW":2640}
+},
+"designSystems":[]}

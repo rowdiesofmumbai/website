@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mask Mode — Videos</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Chakra+Petch:wght@400;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#070d10}
+a{color:#22d3d6}a:hover{color:#ffb547}
+</style>
+</helmet>
+<div style="background: #070d10; color: #e8f1f2; font-family: 'Chakra Petch', sans-serif; min-height: 100vh">
+
+<header style="max-width: 1240px; margin: 0 auto; padding: 22px 24px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between">
+<a href="Main.dc.html" style="text-decoration: none; color: #e8f1f2; font-family: Anton, sans-serif; font-size: 26px; letter-spacing: 2px; line-height: 0.95">ROWDIES<br><span style="color: #22d3d6">OF MUMBAI</span></a>
+<nav style="display: flex; flex-wrap: wrap; gap: 28px; font-weight: 600; font-size: 14px; letter-spacing: 3px; text-transform: uppercase">
+<a href="Main.dc.html" style="color: #8fa6ab; text-decoration: none">Profile</a>
+<a href="MaskMode-Videos.dc.html" style="color: #e8f1f2; text-decoration: none; border-bottom: 2px solid #ff7a1a; padding-bottom: 4px">Videos</a>
+<a href="Main.dc.html#gigs" style="color: #8fa6ab; text-decoration: none">Gigs</a>
+<a href="Main.dc.html#book" style="color: #8fa6ab; text-decoration: none">Book us</a>
+</nav>
+</header>
+
+<section style="max-width: 1240px; margin: 0 auto; padding: 24px 24px 40px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 16px; margin-bottom: 28px">
+<h1 style="margin: 0; font-family: Anton, sans-serif; font-weight: 400; font-size: 96px; line-height: 0.9; text-transform: uppercase">Tape <span style="color: #ff7a1a">room</span></h1>
+<a href="https://www.youtube.com/@rowdiesofMumbai" style="color: #22d3d6; font-weight: 700; letter-spacing: 2px; text-decoration: none; font-size: 14px">FULL CHANNEL ON YOUTUBE →</a>
+</div>
+<div style="position: relative; background: #000; box-shadow: 0 0 0 2px #22d3d6, 18px 18px 0 0 #ff7a1a">
+<img src="../assets/images/laser.jpg" alt="Laser tunnel from a Rowdies set" style="display: block; width: 100%; height: 600px; object-fit: cover; opacity: 0.8">
+<div style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: space-between; padding: 32px; background: linear-gradient(0deg, rgba(7,13,16,0.92), rgba(7,13,16,0) 55%)">
+<div style="align-self: flex-start; background: #ff7a1a; color: #120802; font-weight: 700; font-size: 12px; letter-spacing: 3px; padding: 6px 12px">LATEST SET</div>
+<div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: center">
+<button aria-label="Play latest set" style="width: 88px; height: 88px; border-radius: 50%; border: 0; background: #22d3d6; color: #04191a; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4v16l13-8z"></path></svg></button>
+<div><div style="font-family: Anton, sans-serif; font-size: 48px; text-transform: uppercase">[SET TITLE]</div><div style="color: #b9cbcf">[Venue] · [Date] · [Length]</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<section style="max-width: 1240px; margin: 0 auto; padding: 24px 24px 80px">
+<div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px">
+<button style="background: #22d3d6; color: #04191a; border: 0; padding: 12px 20px; font-family: inherit; font-weight: 700; letter-spacing: 2px; font-size: 13px">ALL</button>
+<button style="background: transparent; color: #e8f1f2; border: 1px solid #2c444b; padding: 12px 20px; font-family: inherit; font-weight: 700; letter-spacing: 2px; font-size: 13px">LIVE SETS</button>
+<button style="background: transparent; color: #e8f1f2; border: 1px solid #2c444b; padding: 12px 20px; font-family: inherit; font-weight: 700; letter-spacing: 2px; font-size: 13px">REELS</button>
+<button style="background: transparent; color: #e8f1f2; border: 1px solid #2c444b; padding: 12px 20px; font-family: inherit; font-weight: 700; letter-spacing: 2px; font-size: 13px">BEHIND THE MASK</button>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px">
+<sc-for list="{{videos}}" as="v" hint-placeholder-count="8">
+<a href="#" style="display: flex; flex-direction: column; text-decoration: none; color: #e8f1f2; background: #0e1a1f">
+<div style="position: relative">
+<img src="{{v.img}}" alt="{{v.title}}" style="display: block; width: 100%; height: 340px; object-fit: cover">
+<div style="position: absolute; top: 12px; right: 12px; background: rgba(7,13,16,0.85); color: #22d3d6; font-size: 12px; font-weight: 700; letter-spacing: 2px; padding: 4px 8px">{{v.tag}}</div>
+</div>
+<div style="padding: 14px 16px; border-top: 3px solid #ff7a1a"><div style="font-family: Anton, sans-serif; font-size: 22px; text-transform: uppercase">{{v.title}}</div></div>
+</a>
+</sc-for>
+</div>
+</section>
+
+<footer style="border-top: 1px solid #1a2a30; padding: 24px; text-align: center; color: #8fa6ab; font-size: 13px; letter-spacing: 3px">ROWDIES OF MUMBAI · MUMBAI, INDIA</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1800}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { videos: [
+      { img: '../assets/images/drop.jpg', title: 'Drop Incoming', tag: 'REEL' },
+      { img: '../assets/images/energy.jpg', title: 'Energy', tag: 'REEL' },
+      { img: '../assets/images/deck.jpg', title: '[Video title]', tag: 'LIVE' },
+      { img: '../assets/images/neon.jpg', title: '[Video title]', tag: 'LIVE' },
+      { img: '../assets/images/crowd.jpg', title: '[Video title]', tag: 'BTS' },
+      { img: '../assets/images/plaid.jpg', title: '[Video title]', tag: 'LIVE' },
+      { img: '../assets/images/blue.jpg', title: '[Video title]', tag: 'REEL' },
+      { img: '../assets/images/laser.jpg', title: '[Video title]', tag: 'REEL' }
+    ] };
+  }
+}
+</script>
+</body>
+</html>

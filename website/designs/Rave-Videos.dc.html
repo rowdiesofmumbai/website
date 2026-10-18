@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Rave Brutal — Videos</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap">
+<style>
+body{margin:0;background:#ff6a13}
+a{color:#0a0a0a}a:hover{color:#0d6f73}
+</style>
+</helmet>
+<div style="background: #ff6a13; color: #0a0a0a; font-family: 'Space Grotesk', sans-serif; min-height: 100vh">
+
+<header style="display: flex; flex-wrap: wrap; border-bottom: 4px solid #0a0a0a">
+<a href="Rave-Profile.dc.html" style="flex: 1 1 260px; padding: 18px 24px; font-family: 'Archivo Black', sans-serif; font-size: 20px; text-decoration: none; border-right: 4px solid #0a0a0a">ROWDIES OF MUMBAI®</a>
+<nav style="display: flex; flex-wrap: wrap; font-weight: 700; font-size: 15px">
+<a href="Rave-Profile.dc.html" style="padding: 20px 24px; text-decoration: none">PROFILE</a>
+<a href="Rave-Videos.dc.html" style="padding: 20px 24px; background: #0a0a0a; color: #ff6a13; text-decoration: none">VIDEOS</a>
+<a href="Rave-Profile.dc.html#gigs" style="padding: 20px 24px; text-decoration: none; border-left: 4px solid #0a0a0a">GIGS</a>
+<a href="Rave-Profile.dc.html#book" style="padding: 20px 24px; text-decoration: none; border-left: 4px solid #0a0a0a; background: #18c8cc">BOOK ↗</a>
+</nav>
+</header>
+
+<section style="padding: 24px 24px 20px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px">
+<h1 style="margin: 0; font-family: 'Archivo Black', sans-serif; font-weight: 400; font-size: clamp(80px, 14vw, 200px); line-height: 0.82; letter-spacing: -5px">VIDEOS</h1>
+<div style="font-family: 'Archivo Black', sans-serif; font-size: 28px; padding-bottom: 14px">(08)</div>
+</section>
+
+<section style="border-top: 4px solid #0a0a0a; border-bottom: 4px solid #0a0a0a; display: flex; flex-wrap: wrap">
+<div style="flex: 2 1 560px; min-width: 0; position: relative; border-right: 4px solid #0a0a0a; background: #0a0a0a">
+<img src="../assets/images/laser.jpg" alt="Latest set" style="display: block; width: 100%; height: 520px; object-fit: cover">
+<button aria-label="Play latest set" style="position: absolute; right: 24px; bottom: 24px; width: 120px; height: 120px; background: #18c8cc; border: 4px solid #0a0a0a; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="48" height="48" viewBox="0 0 24 24" fill="#0a0a0a" aria-hidden="true"><path d="M7 4v16l13-8z"></path></svg></button>
+</div>
+<div style="flex: 1 1 300px; min-width: 0; padding: 28px; display: flex; flex-direction: column; gap: 16px">
+<div style="font-weight: 700; letter-spacing: 3px; font-size: 13px">NOW SHOWING</div>
+<div style="font-family: 'Archivo Black', sans-serif; font-size: 48px; line-height: 0.95">[LATEST SET TITLE]</div>
+<div style="font-size: 18px; font-weight: 500">[VENUE] · [DATE] · [LENGTH]</div>
+<a href="https://www.youtube.com/@rowdiesofMumbai" style="margin-top: auto; background: #0a0a0a; color: #ff6a13; padding: 18px; font-family: 'Archivo Black', sans-serif; font-size: 20px; text-decoration: none; display: flex; justify-content: space-between">ALL ON YOUTUBE <span>↗</span></a>
+</div>
+</section>
+
+<div style="display: flex; flex-wrap: wrap; border-bottom: 4px solid #0a0a0a; font-weight: 700">
+<button style="padding: 16px 24px; background: #0a0a0a; color: #ff6a13; border: 0; font-family: inherit; font-size: 15px; font-weight: 700">ALL</button>
+<button style="padding: 16px 24px; background: transparent; border: 0; border-right: 4px solid #0a0a0a; font-family: inherit; font-size: 15px; font-weight: 700">LIVE</button>
+<button style="padding: 16px 24px; background: transparent; border: 0; border-right: 4px solid #0a0a0a; font-family: inherit; font-size: 15px; font-weight: 700">REELS</button>
+<button style="padding: 16px 24px; background: transparent; border: 0; border-right: 4px solid #0a0a0a; font-family: inherit; font-size: 15px; font-weight: 700">BTS</button>
+</div>
+
+<section style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr))">
+<sc-for list="{{videos}}" as="v" hint-placeholder-count="8">
+<a href="#" style="display: block; text-decoration: none; border-right: 4px solid #0a0a0a; border-bottom: 4px solid #0a0a0a; background: {{v.bg}}">
+<img src="{{v.img}}" alt="{{v.title}}" style="display: block; width: 100%; height: 320px; object-fit: cover">
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 16px; border-top: 4px solid #0a0a0a"><span style="font-family: 'Archivo Black', sans-serif; font-size: 22px">{{v.n}} {{v.title}}</span><span style="font-weight: 700; font-size: 13px">{{v.tag}}</span></div>
+</a>
+</sc-for>
+</section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1800}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const items = [
+      ['../assets/images/drop.jpg', 'Drop Incoming', 'REEL'],
+      ['../assets/images/energy.jpg', 'Energy', 'REEL'],
+      ['../assets/images/deck.jpg', '[Video title]', 'LIVE'],
+      ['../assets/images/neon.jpg', '[Video title]', 'LIVE'],
+      ['../assets/images/crowd.jpg', '[Video title]', 'BTS'],
+      ['../assets/images/plaid.jpg', '[Video title]', 'LIVE'],
+      ['../assets/images/blue.jpg', '[Video title]', 'REEL'],
+      ['../assets/images/laser.jpg', '[Video title]', 'LIVE']
+    ];
+    return { videos: items.map((x, i) => ({ img: x[0], title: x[1], tag: x[2], n: String(i + 1).padStart(2, '0'), bg: i % 3 === 1 ? '#18c8cc' : '#ff6a13' })) };
+  }
+}
+</script>
+</body>
+</html>

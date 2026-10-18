@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>*,*::before,*::after{box-sizing:border-box}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Rowdies of Mumbai</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Rowdies of Mumbai — Mumbai DJ crew. Website unmasking soon.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Chakra+Petch:wght@500;700&display=swap">
+<style>
+/* Layout: one screen, giant wordmark split above and below the masked-crew art, which is the play button; live spectrum along the floor. Single dark look by choice. */
+:root {
+  --night: #05090b;
+  --ink: #e9f3f4;
+  --mute: #8aa3a8;
+  --teal: #1fd8dc;
+  --orange: #ff7419;
+  --amber: #ffb547;
+  --display: "Anton", "Impact", "Arial Narrow", sans-serif;
+  --body: "Chakra Petch", "Segoe UI", system-ui, sans-serif;
+  --kick: 0;
+  color-scheme: dark;
+}
+html, body { height: 100%; }
+body {
+  background: var(--night);
+  color: var(--ink);
+  font-family: var(--body);
+  overflow-x: hidden;
+}
+.stage {
+  position: relative;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0 120px;
+  overflow: hidden;
+  isolation: isolate;
+}
+/* alley haze behind everything */
+.stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(60% 45% at 30% 40%, rgba(31,216,220,calc(0.10 + var(--kick) * 0.25)), transparent 70%),
+    radial-gradient(55% 45% at 72% 62%, rgba(255,116,25,calc(0.10 + var(--kick) * 0.25)), transparent 70%);
+}
+/* scanlines */
+.stage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  background: repeating-linear-gradient(0deg, rgba(0,0,0,0.22) 0 1px, transparent 1px 3px);
+}
+
+.ticker {
+  width: calc(100% + 2 * max(16px, env(safe-area-inset-left, 0px)));
+  margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px)));
+  background: var(--orange);
+  color: #120700;
+  font-family: var(--display);
+  font-size: 18px;
+  letter-spacing: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-block: 8px;
+  position: relative;
+  z-index: 6;
+}
+.ticker span { display: inline-block; padding-left: 100%; animation: run 22s linear infinite; }
+@keyframes run { to { transform: translateX(-100%); } }
+
+.word {
+  font-family: var(--display);
+  font-weight: 400;
+  line-height: 0.82;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+  letter-spacing: -1px;
+  position: relative;
+  z-index: 1;
+}
+.word.top { font-size: clamp(72px, 19vw, 260px); margin-top: 12px; }
+.word.bottom { font-size: clamp(44px, 11vw, 150px); color: var(--teal); text-shadow: 0 0 calc(10px + var(--kick) * 40px) rgba(31,216,220,0.55); }
+.word .o { color: var(--orange); }
+
+/* the art: the button that drops the track */
+.art {
+  position: relative;
+  z-index: 2;
+  width: min(420px, 78vw);
+  aspect-ratio: 3 / 4;
+  max-width: 100%;
+  margin-block: clamp(-90px, -9vw, -30px);
+  border: 0;
+  padding: 0;
+  background: #000;
+  cursor: pointer;
+  transform: scale(calc(1 + var(--kick) * 0.06)) rotate(calc(var(--kick) * -1.2deg));
+  transition: transform 60ms linear;
+  box-shadow:
+    calc(-10px - var(--kick) * 14px) calc(-10px - var(--kick) * 14px) 0 0 var(--teal),
+    calc(10px + var(--kick) * 14px) calc(10px + var(--kick) * 14px) 0 0 var(--orange);
+}
+.art:focus-visible { outline: 3px solid var(--amber); outline-offset: 10px; }
+.art img, .art .split {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+.art .split {
+  background: url("assets/images/crew.jpg") center 30% / cover no-repeat;
+  mix-blend-mode: screen;
+  opacity: calc(var(--kick) * 0.9);
+}
+.art .split.t { filter: sepia(1) hue-rotate(130deg) saturate(5); transform: translate(calc(var(--kick) * -12px), 0); }
+.art .split.o { filter: sepia(1) hue-rotate(-20deg) saturate(6); transform: translate(calc(var(--kick) * 12px), 0); }
+
+.prompt {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(5,9,11,0.88);
+  border: 1px solid var(--teal);
+  color: var(--ink);
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 3px;
+  padding: 11px 16px;
+  white-space: nowrap;
+  z-index: 3;
+}
+.prompt svg { flex: none; }
+.art[data-state="idle"] .prompt { animation: beckon 1.4s ease-in-out infinite; }
+@keyframes beckon { 50% { box-shadow: 0 0 0 8px rgba(31,216,220,0); border-color: var(--orange); } 0%,100% { box-shadow: 0 0 0 0 rgba(31,216,220,0.6); } }
+
+.status {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+}
+.status .eyebrow { font-weight: 700; letter-spacing: 6px; font-size: 13px; color: var(--amber); }
+.status h2 {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(30px, 5vw, 54px);
+  letter-spacing: 2px;
+  text-wrap: balance;
+}
+.status h2 em { font-style: normal; color: var(--orange); }
+.bar { width: min(360px, 80vw); height: 6px; background: #14262b; overflow: hidden; }
+.bar i { display: block; height: 100%; width: 40%; background: linear-gradient(90deg, var(--teal), var(--orange)); animation: load 2.6s ease-in-out infinite; }
+@keyframes load { 0% { transform: translateX(-110%); } 100% { transform: translateX(260%); } }
+
+.links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 2px;
+  padding: 13px 18px;
+  border: 1px solid #27424a;
+  background: rgba(5,9,11,0.7);
+  transition: border-color 0.15s, color 0.15s;
+}
+.links a:hover, .links a:focus-visible { border-color: var(--orange); color: var(--amber); outline: none; }
+
+#spectrum {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: calc(110px + env(safe-area-inset-bottom, 0px));
+  z-index: 0;
+  pointer-events: none;
+}
+.sound {
+  position: fixed;
+  right: calc(16px + env(safe-area-inset-right, 0px));
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  z-index: 7;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid var(--teal);
+  background: rgba(5,9,11,0.85);
+  color: var(--teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.sound:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; }
+
+/* a hit on the beat flips the glow */
+.stage.hit .word.top { color: var(--amber); }
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker span, .bar i, .art[data-state="idle"] .prompt { animation: none; }
+  .ticker span { padding-left: 16px; }
+  :root { --kick: 0 !important; }
+}
+</style>
+</head>
+<body>
+
+<main class="stage" id="stage">
+  <div class="ticker" aria-hidden="true"><span>WEBSITE DROPPING SOON ✕ ROWDIES OF MUMBAI ✕ FACES HIDDEN ✕ BASS LOUD ✕ FOLLOW FOR THE DROP ✕ WEBSITE DROPPING SOON ✕ ROWDIES OF MUMBAI</span></div>
+
+  <h1 class="word top">Rowdies</h1>
+
+  <button class="art" id="art" type="button" data-state="idle" aria-label="Play the Rowdies of Mumbai track">
+    <img src="assets/images/crew.jpg" alt="">
+    <span class="split t" aria-hidden="true"></span>
+    <span class="split o" aria-hidden="true"></span>
+    <span class="prompt" id="prompt">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="#ff7419" aria-hidden="true"><path d="M7 4v16l13-8z"></path></svg>
+      <span id="promptText">TAP THE MASKS</span>
+    </span>
+  </button>
+
+  <p class="word bottom">Of <span class="o">Mumbai</span></p>
+
+  <section class="status" aria-label="Launch status">
+    <div class="eyebrow">MUMBAI DJ CREW</div>
+    <h2>The website is <em>unmasking</em> soon</h2>
+    <div class="bar" aria-hidden="true"><i></i></div>
+    <nav class="links" aria-label="Follow Rowdies of Mumbai">
+      <a href="https://www.instagram.com/rowdiesofmumbai/" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1"></circle></svg>
+        @ROWDIESOFMUMBAI
+      </a>
+      <a href="https://www.youtube.com/@rowdiesofMumbai" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4"></rect><path d="M10 9l5 3-5 3z"></path></svg>
+        YOUTUBE
+      </a>
+    </nav>
+  </section>
+</main>
+
+<canvas id="spectrum" aria-hidden="true"></canvas>
+<button class="sound" id="sound" type="button" aria-label="Play music" hidden>
+  <svg id="soundIcon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z"></path><path d="M16 9a4 4 0 0 1 0 6"></path><path d="M19 6a8 8 0 0 1 0 12"></path></svg>
+</button>
+<audio id="track" src="assets/audio/rowdies-theme.mp3" loop preload="auto"></audio>
+
+<script>
+(function () {
+  var audio = document.getElementById('track');
+  var art = document.getElementById('art');
+  var promptText = document.getElementById('promptText');
+  var sound = document.getElementById('sound');
+  var stage = document.getElementById('stage');
+  var canvas = document.getElementById('spectrum');
+  var g = canvas.getContext('2d');
+  var root = document.documentElement;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var ctx = null, analyser = null, data = null, raf = 0, smooth = 0;
+
+  var ICON_ON = '<path d="M4 9v6h4l5 4V5L8 9z"></path><path d="M16 9a4 4 0 0 1 0 6"></path><path d="M19 6a8 8 0 0 1 0 12"></path>';
+  var ICON_OFF = '<path d="M4 9v6h4l5 4V5L8 9z"></path><path d="M17 9l5 6"></path><path d="M22 9l-5 6"></path>';
+
+  function size() {
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = Math.round(canvas.clientWidth * dpr);
+    canvas.height = Math.round(canvas.clientHeight * dpr);
+  }
+  window.addEventListener('resize', size);
+  size();
+
+  function idleBars(t) {
+    var w = canvas.width, h = canvas.height, n = 64, bw = w / n;
+    g.clearRect(0, 0, w, h);
+    for (var i = 0; i < n; i++) {
+      var v = 0.08 + 0.05 * Math.sin(t / 700 + i * 0.5);
+      g.fillStyle = i % 2 ? 'rgba(31,216,220,0.35)' : 'rgba(255,116,25,0.35)';
+      g.fillRect(i * bw + 1, h - v * h, bw - 2, v * h);
+    }
+  }
+
+  function setup() {
+    if (ctx) return;
+    try {
+      var AC = window.AudioContext || window.webkitAudioContext;
+      ctx = new AC();
+      var src = ctx.createMediaElementSource(audio);
+      analyser = ctx.createAnalyser();
+      analyser.fftSize = 256;
+      analyser.smoothingTimeConstant = 0.78;
+      src.connect(analyser);
+      analyser.connect(ctx.destination);
+      data = new Uint8Array(analyser.frequencyBinCount);
+    } catch (e) { ctx = null; analyser = null; }
+  }
+
+  function frame(t) {
+    raf = requestAnimationFrame(frame);
+    if (!analyser || audio.paused) {
+      idleBars(t);
+      smooth *= 0.85;
+      root.style.setProperty('--kick', reduce ? 0 : smooth.toFixed(3));
+      return;
+    }
+    analyser.getByteFrequencyData(data);
+    var bass = 0;
+    for (var b = 1; b < 7; b++) bass += data[b];
+    bass = bass / (6 * 255);
+    var kick = Math.max(0, (bass - 0.45) / 0.55);
+    smooth = Math.max(kick, smooth * 0.82);
+    root.style.setProperty('--kick', reduce ? 0 : smooth.toFixed(3));
+    stage.classList.toggle('hit', kick > 0.6 && !reduce);
+
+    var w = canvas.width, h = canvas.height, n = 64, bw = w / n;
+    g.clearRect(0, 0, w, h);
+    for (var i = 0; i < n; i++) {
+      var v = data[Math.floor(i * (data.length * 0.7) / n)] / 255;
+      var bh = Math.max(0.04, v) * h;
+      g.fillStyle = i < n * smooth * 1.2 ? '#ff7419' : '#1fd8dc';
+      g.globalAlpha = 0.35 + v * 0.65;
+      g.fillRect(i * bw + 1, h - bh, bw - 2, bh);
+    }
+    g.globalAlpha = 1;
+  }
+
+  function render() {
+    var playing = !audio.paused;
+    art.dataset.state = playing ? 'playing' : 'idle';
+    promptText.textContent = playing ? 'NOW PLAYING · TAP TO PAUSE' : 'TAP THE MASKS';
+    art.setAttribute('aria-label', playing ? 'Pause the Rowdies of Mumbai track' : 'Play the Rowdies of Mumbai track');
+    sound.hidden = false;
+    sound.setAttribute('aria-label', playing ? 'Pause music' : 'Play music');
+    document.getElementById('soundIcon').innerHTML = playing ? ICON_ON : ICON_OFF;
+  }
+
+  function toggle() {
+    setup();
+    if (ctx && ctx.state === 'suspended') ctx.resume();
+    if (audio.paused) {
+      var p = audio.play();
+      if (p && p.catch) p.catch(function () { promptText.textContent = 'TAP AGAIN TO PLAY'; });
+    } else {
+      audio.pause();
+    }
+  }
+
+  art.addEventListener('click', toggle);
+  sound.addEventListener('click', toggle);
+  audio.addEventListener('play', render);
+  audio.addEventListener('pause', render);
+  raf = requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

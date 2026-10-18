@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mask Mode — Profile</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Chakra+Petch:wght@400;600;700&amp;display=swap">
+<style>
+body{margin:0;background:#070d10}
+a{color:#22d3d6}a:hover{color:#ffb547}
+</style>
+</helmet>
+<div style="background: #070d10; color: #e8f1f2; font-family: 'Chakra Petch', sans-serif; min-height: 100vh">
+
+<header style="max-width: 1240px; margin: 0 auto; padding: 22px 24px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between">
+<a href="Main.dc.html" style="text-decoration: none; color: #e8f1f2; font-family: Anton, sans-serif; font-size: 26px; letter-spacing: 2px; line-height: 0.95">ROWDIES<br><span style="color: {{accent}}">OF MUMBAI</span></a>
+<nav style="display: flex; flex-wrap: wrap; gap: 28px; font-weight: 600; font-size: 14px; letter-spacing: 3px; text-transform: uppercase">
+<a href="Main.dc.html" style="color: #e8f1f2; text-decoration: none; border-bottom: 2px solid #ff7a1a; padding-bottom: 4px">Profile</a>
+<a href="MaskMode-Videos.dc.html" style="color: #8fa6ab; text-decoration: none">Videos</a>
+<a href="#gigs" style="color: #8fa6ab; text-decoration: none">Gigs</a>
+<a href="#book" style="color: #8fa6ab; text-decoration: none">Book us</a>
+</nav>
+</header>
+
+<section style="max-width: 1240px; margin: 0 auto; padding: 24px 24px 64px; display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
+<div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+<div style="font-size: 13px; letter-spacing: 6px; color: #ff7a1a; font-weight: 700">MUMBAI DJ COLLECTIVE</div>
+<h1 style="margin: 0; font-family: Anton, sans-serif; font-weight: 400; font-size: 104px; line-height: 0.9; text-transform: uppercase">Faces hidden.<br><span style="color: {{accent}}">Bass</span> <span style="color: #ff7a1a">loud.</span></h1>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #b9cbcf; max-width: 520px">[One or two lines about who the Rowdies are — the crew, the sound, the city.]</p>
+<div style="display: flex; flex-wrap: wrap; gap: 14px">
+<a href="MaskMode-Videos.dc.html" style="display: inline-flex; align-items: center; gap: 10px; background: #ff7a1a; color: #120802; text-decoration: none; font-weight: 700; letter-spacing: 2px; padding: 16px 26px; text-transform: uppercase; font-size: 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4v16l13-8z"></path></svg>Watch sets</a>
+<a href="#book" style="display: inline-flex; align-items: center; color: #22d3d6; text-decoration: none; font-weight: 700; letter-spacing: 2px; padding: 15px 26px; border: 1px solid #22d3d6; text-transform: uppercase; font-size: 14px">Book the crew</a>
+</div>
+</div>
+<div style="flex: 1 1 420px; min-width: 0; position: relative">
+<div style="position: absolute; inset: -14px 14px 14px -14px; border: 2px solid #22d3d6"></div>
+<div style="position: absolute; inset: 14px -14px -14px 14px; border: 2px solid #ff7a1a"></div>
+<button onClick="{{toggle}}" aria-label="{{label}}" style="position: relative; display: block; width: 100%; padding: 0; border: 0; background: #000; cursor: pointer">
+<img src="../assets/images/crew.jpg" alt="The Rowdies of Mumbai crew in masks behind the decks" style="display: block; width: 100%; height: 600px; object-fit: cover; object-position: center 30%">
+<span style="position: absolute; left: 20px; bottom: 20px; display: inline-flex; align-items: center; gap: 12px; background: rgba(7,13,16,0.88); color: #e8f1f2; padding: 12px 18px; font-family: 'Chakra Petch', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 3px; border: 1px solid {{accent}}">
+<sc-if value="{{playing}}" hint-placeholder-val="{{ false }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="#ff7a1a" aria-hidden="true"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg><span>NOW PLAYING · TAP TO PAUSE</span></sc-if>
+<sc-if value="{{paused}}" hint-placeholder-val="{{ true }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="#ff7a1a" aria-hidden="true"><path d="M7 4v16l13-8z"></path></svg><span>TAP THE MASKS · HEAR US</span></sc-if>
+</span>
+</button>
+</div>
+</section>
+
+<div style="background: {{accent}}; color: #04191a; font-family: Anton, sans-serif; font-size: 28px; letter-spacing: 3px; padding: 14px 24px; overflow: hidden; white-space: nowrap">ROWDIES OF MUMBAI ✕ [GENRE] ✕ [GENRE] ✕ DROP INCOMING ✕ ROWDIES OF MUMBAI ✕ [GENRE] ✕ [GENRE]</div>
+
+<section style="max-width: 1240px; margin: 0 auto; padding: 80px 24px 40px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 16px; margin-bottom: 32px">
+<h2 style="margin: 0; font-family: Anton, sans-serif; font-weight: 400; font-size: 64px; text-transform: uppercase">The crew</h2>
+<div style="color: #8fa6ab; font-size: 14px; letter-spacing: 3px">BEHIND THE MASKS</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px">
+<div style="background: #0e1a1f; display: flex; flex-direction: column"><img src="../assets/images/deck.jpg" alt="Crew member on the decks" style="width: 100%; height: 300px; object-fit: cover; filter: saturate(1.2)"><div style="padding: 18px; border-top: 3px solid #22d3d6"><div style="font-family: Anton, sans-serif; font-size: 26px">[DJ NAME]</div><div style="color: #8fa6ab; font-size: 13px; letter-spacing: 2px">[ROLE / SOUND]</div></div></div>
+<div style="background: #0e1a1f; display: flex; flex-direction: column"><img src="../assets/images/plaid.jpg" alt="Crew member mixing" style="width: 100%; height: 300px; object-fit: cover; filter: saturate(1.2)"><div style="padding: 18px; border-top: 3px solid #ff7a1a"><div style="font-family: Anton, sans-serif; font-size: 26px">[DJ NAME]</div><div style="color: #8fa6ab; font-size: 13px; letter-spacing: 2px">[ROLE / SOUND]</div></div></div>
+<div style="background: #0e1a1f; display: flex; flex-direction: column"><img src="../assets/images/neon.jpg" alt="Crew member under neon light" style="width: 100%; height: 300px; object-fit: cover; filter: saturate(1.2)"><div style="padding: 18px; border-top: 3px solid #22d3d6"><div style="font-family: Anton, sans-serif; font-size: 26px">[DJ NAME]</div><div style="color: #8fa6ab; font-size: 13px; letter-spacing: 2px">[ROLE / SOUND]</div></div></div>
+<div style="background: #0e1a1f; display: flex; flex-direction: column"><img src="../assets/images/blue.jpg" alt="Crew member in blue light" style="width: 100%; height: 300px; object-fit: cover; filter: saturate(1.2)"><div style="padding: 18px; border-top: 3px solid #ff7a1a"><div style="font-family: Anton, sans-serif; font-size: 26px">[DJ NAME]</div><div style="color: #8fa6ab; font-size: 13px; letter-spacing: 2px">[ROLE / SOUND]</div></div></div>
+</div>
+</section>
+
+<section id="gigs" style="max-width: 1240px; margin: 0 auto; padding: 40px 24px">
+<h2 style="margin: 0 0 24px; font-family: Anton, sans-serif; font-weight: 400; font-size: 64px; text-transform: uppercase">Next <span style="color: #ff7a1a">drops</span></h2>
+<div style="display: flex; flex-direction: column; border-top: 1px solid #23363c">
+<div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: center; padding: 22px 0; border-bottom: 1px solid #23363c"><div style="font-family: Anton, sans-serif; font-size: 40px; color: {{accent}}; min-width: 140px">[DATE]</div><div style="flex: 1 1 260px"><div style="font-size: 22px; font-weight: 700">[EVENT NAME]</div><div style="color: #8fa6ab">[VENUE], Mumbai</div></div><a href="#book" style="color: #ffb547; font-weight: 700; letter-spacing: 2px; text-decoration: none; font-size: 14px">TICKETS →</a></div>
+<div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: center; padding: 22px 0; border-bottom: 1px solid #23363c"><div style="font-family: Anton, sans-serif; font-size: 40px; color: {{accent}}; min-width: 140px">[DATE]</div><div style="flex: 1 1 260px"><div style="font-size: 22px; font-weight: 700">[EVENT NAME]</div><div style="color: #8fa6ab">[VENUE], Mumbai</div></div><a href="#book" style="color: #ffb547; font-weight: 700; letter-spacing: 2px; text-decoration: none; font-size: 14px">TICKETS →</a></div>
+</div>
+</section>
+
+<section id="book" style="max-width: 1240px; margin: 0 auto; padding: 56px 24px 80px">
+<div style="background: linear-gradient(120deg, #0f3b3d, #3a1a08); padding: 48px; display: flex; flex-wrap: wrap; gap: 32px; align-items: center; justify-content: space-between">
+<div><div style="font-family: Anton, sans-serif; font-size: 52px; line-height: 1; text-transform: uppercase">Unmask your night</div><div style="color: #d3e2e4; margin-top: 10px">Clubs, private parties, brand events — [BOOKING EMAIL]</div></div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<a href="https://www.instagram.com/rowdiesofmumbai/" style="display: inline-flex; align-items: center; gap: 10px; background: #070d10; color: #e8f1f2; text-decoration: none; padding: 14px 20px; font-weight: 600"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1"></circle></svg>@rowdiesofmumbai</a>
+<a href="https://www.youtube.com/@rowdiesofMumbai" style="display: inline-flex; align-items: center; gap: 10px; background: #070d10; color: #e8f1f2; text-decoration: none; padding: 14px 20px; font-weight: 600"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4"></rect><path d="M10 9l5 3-5 3z"></path></svg>YouTube</a>
+</div>
+</div>
+</section>
+
+<footer style="border-top: 1px solid #1a2a30; padding: 24px; text-align: center; color: #8fa6ab; font-size: 13px; letter-spacing: 3px">ROWDIES OF MUMBAI · MUMBAI, INDIA</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#22d3d6","options":["#22d3d6","#ff7a1a","#ffb547"]},"$preview":{"width":1280,"height":1800}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { playing: false };
+    this.audio = null;
+  }
+  componentWillUnmount() {
+    if (this.audio) { this.audio.pause(); this.audio = null; }
+  }
+  toggle() {
+    if (!this.audio) {
+      this.audio = new Audio('../assets/audio/rowdies-theme.mp3');
+      this.audio.loop = true;
+      this.audio.addEventListener('ended', () => this.setState({ playing: false }));
+    }
+    if (this.state.playing) {
+      this.audio.pause();
+      this.setState({ playing: false });
+    } else {
+      const p = this.audio.play();
+      if (p && p.catch) p.catch(() => this.setState({ playing: false }));
+      this.setState({ playing: true });
+    }
+  }
+  renderVals() {
+    const playing = !!this.state.playing;
+    return {
+      accent: this.props.accent ?? '#22d3d6',
+      playing,
+      paused: !playing,
+      label: playing ? 'Pause the Rowdies track' : 'Play the Rowdies track',
+      toggle: () => this.toggle()
+    };
+  }
+}
+</script>
+</body>
+</html>
